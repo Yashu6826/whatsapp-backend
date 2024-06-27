@@ -10,14 +10,14 @@ import Routes from './routes/Routes.js';
 dotenv.config();
 const app = express();
 
-const PORT = 8000;
+const PORT1 = process.env.PORT||8000;
 
 const username = process.env.DB_USERNAME;
 const password = process.env.DB_PASSWORD;
 
 Connection(username, password);
 
-app.listen(PORT, () => console.log(`Server is running successfully on PORT ${PORT}`));
+app.listen(PORT1, () => console.log(`Server is running successfully on PORT ${PORT1}`));
 
 app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
